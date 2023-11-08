@@ -15,13 +15,26 @@ public class GuiceDemo {
 			 
 			/*DrawShape d = new DrawSquare();*/ // to use the Guice framework, commenting the use of interface
 			 Injector injector = Guice.createInjector(new AppModule()); 
-			/* DrawShape d = injector.getInstance(DrawShape.class);*/
+
+			SquareRequest request1 = injector.getInstance(SquareRequest.class); 
+			request1.makeRequest();
 			
+<<<<<<< Updated upstream
 			 
 			/*SquareRequest request = new SquareRequest(d);*/// Not just the dependent class we can comment out the request class as well and get injector to make it automate
 			 SquareRequest request = injector.getInstance(SquareRequest.class); 
 			
 			request.makeRequest();
+=======
+			SquareRequest request2 = injector.getInstance(SquareRequest.class); 
+			request2.makeRequest();
+		
+			 boolean compareGetDrawShape = request1.getDrawShape() == request2.getDrawShape();
+			 System.out.println("Are the drawShape objects equal? " + compareGetDrawShape);
+			
+			 boolean compareSquareRequest = request1 == request2;
+			 System.out.println("Are the SquareRequest objects equal? " + compareSquareRequest);
+>>>>>>> Stashed changes
 		}
 		
 	}
