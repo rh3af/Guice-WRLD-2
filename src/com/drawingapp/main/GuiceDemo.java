@@ -19,9 +19,10 @@ public class GuiceDemo {
 			
 			 
 			/*SquareRequest request = new SquareRequest(d);*/// Not just the dependent class we can comment out the request class as well and get injector to make it automate
-			 SquareRequest request = injector.getInstance(SquareRequest.class); 
-			
+			 DrawShape d = injector.getInstance(DrawShape.class); 
+			SquareRequest request =  new SquareRequest(d);
 			request.makeRequest();
+			
 		}
 		
 	}
